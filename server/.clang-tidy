@@ -1,0 +1,3 @@
+InheritParentConfig: true
+Checks: >
+  -cppcoreguidelines-rvalue-reference-param-not-moved

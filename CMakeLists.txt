@@ -21,6 +21,9 @@ find_package(Drogon REQUIRED)
 add_library(exchange_core core/OrderBook.cpp core/Exchange.cpp)
 target_include_directories(exchange_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
+add_executable(exchange_server server/main.cc server/OrdersController.cc server/JsonCodec.cc)
+target_link_libraries(exchange_server PRIVATE exchange_core Drogon::Drogon)
+
 enable_testing()
 add_executable(core_tests tests/core_tests.cc tests/exchange_tests.cc)
 target_link_libraries(core_tests PRIVATE exchange_core Drogon::Drogon)
