@@ -1,0 +1,4 @@
+InheritParentConfig: true
+Checks: >
+  -bugprone-chained-comparison,
+  -readability-function-cognitive-complexity
